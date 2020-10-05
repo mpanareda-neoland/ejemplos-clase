@@ -1,0 +1,14 @@
+$theme-colors: (
+  "primary": #643A71,
+  "light": #999999,
+);
+
+@import "../bootstrap/scss/bootstrap";
+
+$primary: var(--primary);
+$light: var(--light);
+
+p {
+  border: 30px solid $primary;
+  background-color: $light;
+}

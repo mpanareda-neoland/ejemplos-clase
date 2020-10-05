@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Hola mundo Javascript</title>
+
+    <link rel="stylesheet" href="scss/main.min.css">
+
+  </head>
+  <body>
+    <header class="container">
+      <h1>Calculadora</h1>
+    </header>
+    <div class="container">
+      <form class="" action="index.html" method="post">
+        <div class="row">
+          <div class="col form-group">
+            <input type="number" name="x" id="x" value="" class="form-control" required>
+          </div>
+          <div class="col form-group">
+            <input type="number" name="y" id="y" value="" class="form-control" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button type="button" class="btn btn-primary" onclick="sumar()">Suma</button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-primary" onclick="comparadores()">Clicka</button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-primary" onclick="mayor_edad()">Mayor de Edad</button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-primary" onclick="evaluar()">Evaluar</button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-primary" onclick="fechas()">Fechas</button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-primary" onclick="bucles()">Bucles</button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-primary" onclick="operaciones()">Operaciones</button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-primary m-1" onclick="boton1()">Variable global</button>
+            <button type="button" class="btn btn-primary m-1" onclick="boton2()">Variable local</button>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col text-center display-1" id="result">
+
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script src="js/main.js" charset="utf-8"></script>
+  </body>
+</html>
