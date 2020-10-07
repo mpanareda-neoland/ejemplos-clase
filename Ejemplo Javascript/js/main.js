@@ -16,7 +16,13 @@ function sumar() {
   y = parseInt(y);
 
   var resultado = suma(x, y);
-  document.getElementById("result").innerHTML = resultado;
+  var innerHTML = "<b>" + resultado + "</b>";
+  if (resultado > 10) {
+    // innerHTML = innerHTML + "<small>€</small>";
+    innerHTML += "<small>€</small>";
+  }
+
+  document.getElementById("result").innerHTML = innerHTML;
 }
 
 function numeros() {
@@ -253,3 +259,35 @@ function suma(num1, num2) {
   var resultado = num1 + num2;
   return resultado;
 }
+
+function x_change() {
+  console.log("x has changed");
+}
+function y_keyup() {
+  var val = document.getElementById("y").value;
+  console.log("y has new char to: " + val);
+}
+
+var glob = 50;
+
+function rellena_tabla() {
+  // obtener un numero aleatorio
+  var rand = Math.random(); // 0 .. 1
+  var randporcien = rand * 100; // 0 .. 100 con decimales
+  var rows = Math.round(randporcien); // 0 .. 100 entero
+
+  // iterar num veces
+  for (var i = 0;i < rows;i++) {
+    // escribir una fila en cada iteración
+    var fila = "<tr>"
+      + "<td>" + i + "</td>"
+      + "<td>nombre " + i + "</td>"
+      + "<td>apellido " + i + "</td>"
+      + "</tr>";
+    document.getElementById("contenido_tabla").innerHTML += fila;
+  }
+
+}
+
+matem();
+rellena_tabla();
