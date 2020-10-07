@@ -287,7 +287,20 @@ function rellena_tabla() {
     document.getElementById("contenido_tabla").innerHTML += fila;
   }
 
+  document.getElementById("contenido_tabla").innerHTML = "";
+
+  var i = 0;
+  while (i < rows) {
+    // escribir una fila en cada iteración
+    var fila = "<tr>"
+      + "<td>" + i + "</td>"
+      + "<td>nombre " + i + "</td>"
+      + "<td>apellido " + i + "</td>"
+      + "</tr>";
+    document.getElementById("contenido_tabla").innerHTML += fila;
+    i++; // i += 1; i = i + 1;
+  }
+
 }
 
-matem();
 rellena_tabla();
