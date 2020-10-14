@@ -206,6 +206,18 @@ function fechas() {
   }
 }
 
+function suma_fechas() {
+  var hoy = new Date();
+  console.log(hoy);
+  var ayer = new Date("2020-10-06");
+  console.log(ayer);
+  var milisegundos = hoy.getTime();
+  console.log(milisegundos);
+  milisegundos = milisegundos + (1000 * 60 * 60 * 24);
+  var nueva_fecha = new Date(milisegundos);
+  console.log(nueva_fecha);
+}
+
 function bucles() {
   var temporizador = 30;
   while (temporizador >= 0) {
