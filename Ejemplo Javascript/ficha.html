@@ -15,8 +15,8 @@
       <section class="container-fluid">
         <div class="container py-2">
           <div class="row">
-            <div class="col-2">
-              <img src="img/avatar1.jpg" alt="Avatar" class="img-fluid">
+            <div id="img-container" class="col-2">
+              <!-- <img src="img/avatar1.jpg" alt="Avatar" class="img-fluid"> -->
             </div>
             <div class="col-10">
               <h4>Alumno</h4>
@@ -39,11 +39,15 @@
             <button type="button" class="btn btn-info" onclick="importar()">Importar</button>
           </div>
           <div class="container py-2">
-            <button type="button" class="btn btn-info" onclick="cambiar_img()">Cambiar Imagen</button>
+            <button type="button" class="btn btn-info" onclick="mostrar_img1()">Mostrar Imagen 1</button>
+            <button type="button" class="btn btn-info" onclick="mostrar_img2()">Mostrar Imagen 2</button>
+            <button type="button" class="btn btn-info" onclick="quitar_img()">Quitar Imagen</button>
+
           </div>
         </form>
       </section>
     </main>
+    <script src="json/alumnos.js" charset="utf-8"></script>
     <script src="js/ficha.js" charset="utf-8"></script>
   </body>
 </html>

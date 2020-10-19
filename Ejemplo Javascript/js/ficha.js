@@ -79,5 +79,81 @@ function cambiar_img() {
   document.getElementsByTagName("h4")[0].style.color = "#17a2b8";
 }
 
-mostrar();
-navegar();
+function mostrar_img1() {
+
+
+  // 1. Consultar si el objeto imagen existe.
+  if (document.getElementsByTagName("img").length === 0) {
+    // 1.1. Si no existe, que lo cree y ponga la imagen 1.
+    var imagen = document.createElement("img");
+    var container = document.getElementById("img-container");
+    container.appendChild(imagen);
+
+    imagen.alt = "Avatar";
+    imagen.classList.add("img-fluid");
+
+  } else {
+    // 1.2. Si existe, que cambie la imagen
+    var imagen = document.getElementsByTagName("img")[0];
+  }
+
+  imagen.src = "img/avatar1.jpg";
+
+  var container = document.getElementById("img-container");
+  console.log(container.parentNode);
+}
+
+function mostrar_img2() {
+  // 1. Consultar si el objeto imagen existe.
+  var imagen;
+  if (document.getElementsByTagName("img").length === 0) {
+    // 1.1. Si no existe, que lo cree y ponga la imagen 1.
+    imagen = document.createElement("img");
+    var container = document.getElementById("img-container");
+    container.appendChild(imagen);
+
+    imagen.alt = "Avatar";
+    imagen.classList.add("img-fluid");
+
+  } else {
+    // 1.2. Si existe, que cambie la imagen
+    imagen = document.getElementsByTagName("img")[0];
+  }
+
+  imagen.src = "img/avatar2.jpg";
+}
+
+function quitar_img() {
+  // 1. Comprobar si la imagen existe
+  if (document.getElementsByTagName("img").length !== 0) {
+    // 1.1. Si existe, la borra
+    var imagenes = document.getElementsByTagName("img");
+    for (var i = 0; i < imagenes.length; i++) {
+      imagenes[i].remove();
+    }
+  }
+}
+
+
+function cargar_alumnos() {
+  // EN lugar de hacer una llamada para obtener el JSON
+  // Simulamos mediante alumnos.js
+  var mis_alumnos = JSON.parse(alumnos);
+  console.log(mis_alumnos);
+}
+
+
+
+function init() {
+  if (document.getElementById("alumno").length > 0) {
+    mostrar();
+  }
+
+  load_user();
+
+  navegar();
+  cargar_alumnos();
+
+}
+
+init();
