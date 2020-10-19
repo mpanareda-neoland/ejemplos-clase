@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Ejercicios Javascript</title>
+  <link rel="stylesheet" href="scss/main.min.css">
+</head>
+<body>
+
+  <header class="container-fluid bg-info">
+    <div class="container py-2 text-center">
+      <h1 class="text-light">Ejercicios Javascript</h1>
+    </div>
+  </header>
+  <main>
+    <section class="container-fluid">
+      <div class="container py-3">
+        <h2>Número de días del mes <small>(Condicional)</small></h2>
+        <p>Programa que pide que seleccionemos un mes y devuelve cuántos días tiene</p>
+        <form class="dias-mes" action="index.html" method="post">
+          <div class="row">
+            <div class="col form-group">
+              <label for="mes">Mes</label>
+              <select class="form-control" name="mes" id="mes" onchange="diasDelMes2()">
+                <option value="">Selecciona un mes</option>
+                <option value="1">Enero</option>
+                <option value="2">Febrero</option>
+                <option value="3">Marzo</option>
+                <option value="4">Abril</option>
+                <option value="5">Mayo</option>
+                <option value="6">Junio</option>
+                <option value="7">Julio</option>
+                <option value="8">Agosto</option>
+                <option value="9">Septiembre</option>
+                <option value="10">Octubre</option>
+                <option value="11">Noviembre</option>
+                <option value="12">Diciembre</option>
+              </select>
+            </div>
+            <div class="col display-4 py-2" id="dias-mes-resultado">
+
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="container-fluid bg-light">
+      <div class="container py-3">
+        <h2>Mayor de 3 números <small>(Condicional)</small></h2>
+        <p>Programa que pide 3 números y te dice cuál es menor</p>
+        <form class="menor-3" action="index.html" method="post">
+          <div class="row">
+            <div class="col form-group">
+              <input type="number" id="num-1" class="form-control my-1" value="" onkeyup="menorDe3()">
+              <input type="number" id="num-2" class="form-control my-1" value="" onkeyup="menorDe3()">
+              <input type="number" id="num-3" class="form-control my-1" value="" onkeyup="menorDe3()">
+            </div>
+            <div class="col display-4 py-4" id="menor-3-resultado">
+
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="container-fluid">
+      <div class="container py-3">
+        <h2>Lotería <small>(Condicional)</small></h2>
+        <p>Programa que te pide tu número y te dice si has ganado o si tienes reintegro (termina igual)</p>
+        <form class="loteria" action="index.html" method="post">
+          <div class="row">
+            <div class="col-2 form-group">
+              <label for="numero-loteria">Tu número</label>
+              <input type="number" id="numero-loteria" class="form-control" value="" onkeyup="compruebaLoteria()">
+            </div>
+            <div class="col-10 display-4 py-2" id="loteria-resultado">
+
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="container-fluid bg-light">
+      <div class="container py-3">
+        <h2>Contar las a <small>(Bucle)</small> </h2>
+        <p>Programa que te pide una frase y te dice el número de letras a que tiene</p>
+        <form class="contar-a" action="index.html" method="post">
+          <div class="row">
+            <div class="col-8 form-group">
+              <label for="frase-a">Introduce una frase</label>
+              <textarea id="frase-a" rows="3" class="form-control" onkeyup="contarA()"></textarea>
+            </div>
+            <div class="col-4 display-4 py-4" id="contar-a-resultado">
+
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="container-fluid">
+      <div class="container py-3">
+        <h2>Tabla de multiplicar <small>(Bucle)</small> </h2>
+        <p>Programa que te pide un número y te devuelve la tabla de multiplicar de ese número</p>
+        <form class="tabla-mult" action="index.html" method="post">
+          <div class="row">
+            <div class="col form-group">
+              <label for="numero-mult">Mostrar la tabla del:</label>
+              <input type="number" id="numero-mult" class="form-control" value=""  onkeyup="montarTablaMult()">
+            </div>
+            <div class="col">
+              <table class="table text-center">
+                <tbody id="tabla-mult-resultado">
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="container-fluid bg-light">
+      <div class="container py-3">
+        <h2>Adivina el número <small>(Bucle)</small> </h2>
+        <p>Programa que pregunta cuántos intentos quieres tener para acertar y te pide un número esas veces para adivinar un número aleatorio</p>
+        <form class="adivina" action="index.html" method="post">
+          <div class="row">
+            <div class="col-3 form-group">
+              <label for="adivina-veces">Cuántas veces quieres probar?</label>
+              <input type="number" id="adivina-veces" class="form-control" value="" onkeyup="adivina()">
+            </div>
+            <div class="col-9 display-4 py-0" id="adivina-resultado">
+
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/ejercicios.js" charset="utf-8"></script>
+</body>
+</html>
