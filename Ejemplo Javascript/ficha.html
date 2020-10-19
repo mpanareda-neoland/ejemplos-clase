@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ficha de un Alumno</title>
+    <link rel="stylesheet" href="scss/main.min.css">
+  </head>
+  <body>
+    <header class="container-fluid bg-info">
+      <div class="container py-2 text-light text-center">
+        <h1>Ficha de un Alumno</h1>
+      </div>
+    </header>
+    <main>
+      <section class="container-fluid">
+        <div class="container py-2">
+          <div class="row">
+            <div class="col-2">
+              <img src="img/avatar1.jpg" alt="Avatar" class="img-fluid">
+            </div>
+            <div class="col-10">
+              <h4>Alumno</h4>
+              <p id="alumno"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container-fluid">
+        <form class="form-inline" action="index.html" method="post">
+          <div class="container py-2">
+            <button type="button" class="btn btn-info" onclick="corregir()">Corregir</button>
+          </div>
+          <div class="container py-2">
+            <button type="button" class="btn btn-info" onclick="exportar()">Exportar</button>
+            <span id="exportar_json"></span>
+          </div>
+          <div class="container py-2">
+            <input type="text" id="importar_json" class="form-control" value="" placeholder="Introduce tu JSON">
+            <button type="button" class="btn btn-info" onclick="importar()">Importar</button>
+          </div>
+          <div class="container py-2">
+            <button type="button" class="btn btn-info" onclick="cambiar_img()">Cambiar Imagen</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <script src="js/ficha.js" charset="utf-8"></script>
+  </body>
+</html>
