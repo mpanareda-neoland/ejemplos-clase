@@ -134,25 +134,78 @@ function quitar_img() {
   }
 }
 
+function ensenar() {
+  var a_mostrar = document.getElementsByClassName("a-mostrar");
+  for (var i = 0; i < a_mostrar.length; i++) {
+    a_mostrar[i].classList.remove("d-none");
+  }
+}
+function ocultar() {
+  var a_ocultar = document.getElementsByClassName("a-mostrar");
+  for (var i = 0; i < a_ocultar.length; i++) {
+    a_ocultar[i].classList.add("d-none");
+  }
+}
 
 function cargar_alumnos() {
   // EN lugar de hacer una llamada para obtener el JSON
   // Simulamos mediante alumnos.js
   var mis_alumnos = JSON.parse(alumnos);
-  console.log(mis_alumnos);
+  console.log("Mis alumnos", mis_alumnos);
+
+  var contenedor = document.getElementById("alumnos_relacionados");
+
+  mis_alumnos.forEach(function(item) {
+    console.log("dentro de la iteracion ", item);
+
+    var div = document.createElement("div");
+    contenedor.appendChild(div);
+
+    var span_nombre = document.createElement("span");
+    span_nombre.classList.add("font-weight-bold");
+    span_nombre.innerHTML = item.nombre + " ";
+    span_nombre.setAttribute("data-toggle", "true");
+    div.appendChild(span_nombre);
+
+    var span_apellido = document.createElement("span");
+    span_apellido.innerHTML = item.apellido;
+    div.appendChild(span_apellido);
+
+  });
+
 }
 
+function cookie() {
+  document.cookie = "id_usuario=1; expires=Fri, 18 Dec 2020 12:00:00 UTC; path=/";
+  document.cookie = "username=mpanareda";
 
+  console.log(document.cookie);
+}
+
+function session_storage() {
+  sessionStorage.setItem("id_usuario", "1");
+  var id_usuario = sessionStorage.getItem("id_usuario");
+  console.log("session storage", id_usuario);
+}
+
+function local_storage() {
+  localStorage.setItem("username", "mpanareda");
+  var username = localStorage.getItem("username");
+  console.log("local storage", username);
+}
 
 function init() {
   if (document.getElementById("alumno").length > 0) {
     mostrar();
   }
 
-  load_user();
+
 
   navegar();
   cargar_alumnos();
+  cookie();
+  session_storage();
+  local_storage();
 
 }
 

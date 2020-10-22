@@ -7,6 +7,10 @@ var alumnos = `
   {
     "nombre": "Jordi",
     "apellido": "Bayo"
+  },
+  {
+    "nombre": "Eustaquio",
+    "apellido": "Pérez"
   }
 ]
 `;
