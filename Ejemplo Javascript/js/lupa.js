@@ -35,6 +35,7 @@ function crear_lupa(e) {
   });
   var ruta_imagen = document.getElementById("ruta_imagen").value;
   lupa.style.backgroundImage = "url(" + ruta_imagen + ")";
+  lupa.style.backgroundRepeat = "no-repeat";
 
   var x = e.pageX;
   var y = e.pageY;

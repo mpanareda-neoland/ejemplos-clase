@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Encuesta</title>
+    <link rel="stylesheet" href="scss/main.min.css">
+  </head>
+  <body>
+
+    <header class="container-fluid bg-info text-light py-4">
+      <div class="container text-center">
+        <h1>Encuesta</h1>
+      </div>
+    </header>
+
+    <main class="container-fluid">
+      <section class="container py-4">
+        <form class="" action="encuesta.html" method="post">
+          <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="text" id="email" name="email" class="form-control" value="">
+          </div>
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" value="">
+          </div>
+          <div class="form-group">
+            <label for="dni">DNI</label>
+            <input type="text" id="dni" name="dni" class="form-control" value="">
+          </div>
+          <div class="form-group">
+            <input type="submit" name="submit" value="Enviar" class="btn btn-info">
+            <!-- <button type="button" id="buscar" class="btn btn-info">Buscar</button> -->
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- jQuery Validation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" charset="utf-8"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Mi Javascript -->
+    <script src="js/encuesta.js" charset="utf-8"></script>
+
+  </body>
+</html>
