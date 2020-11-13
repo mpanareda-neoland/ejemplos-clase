@@ -175,6 +175,46 @@ function cargar_alumnos() {
 
 }
 
+function cargar_alumnos2() {
+  // $.get("json/alumnos.json", function(data) {
+  //   console.log("get", data);
+  // });
+  // $.ajax({
+  //   url: "json/alumnos.json"
+  // })
+  // .done(function(data) {
+  //   console.log(data);
+  // })
+  // .fail(function() {
+  //   console.log("ha habido un error cargando");
+  // });
+  // // https://apiv1.geoapi.es/comunidades?type=JSON&key=&sandbox=1
+  // $.ajax({
+  //   url: "https://cors-anywhere.herokuapp.com/https://apiv1.geoapi.es/comunidades?type=JSON&key=&sandbox=1"
+  // })
+  // .done(function(data) {
+  //   console.log(data);
+  // });
+  // https://apiv1.geoapi.es/comunidades?type=JSON&key=&sandbox=1
+  $.ajax({
+    url: "https://datos.madrid.es/egob/catalogo/201000-0-embajadas-consulados.json"
+  })
+  .done(function(data) {
+    data["@graph"].forEach(function(item) {
+      console.log(item, item.title);
+    });
+  });
+  // $.ajax({
+  //   url: "https://cors-anywhere.herokuapp.com/https://datos.madrid.es/egob/catalogo/202625-0-aparcamientos-publicos.json?distrito_nombre=CHAMARTIN"
+  // })
+  // .done(function(data) {
+  //   console.log(data);
+  //   data["@graph"].forEach(function(item) {
+  //     console.log(item.title, item.location.latitude, item.location.longitude);
+  //   });
+  // });
+}
+
 function cookie() {
   document.cookie = "id_usuario=1; expires=Fri, 18 Dec 2020 12:00:00 UTC; path=/";
   document.cookie = "username=mpanareda";
@@ -203,6 +243,7 @@ function init() {
 
   navegar();
   cargar_alumnos();
+  cargar_alumnos2();
   cookie();
   session_storage();
   local_storage();
