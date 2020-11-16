@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio Lupa</title>
+    <link rel="stylesheet" href="scss/lupa.min.css">
+  </head>
+  <body>
+    <header class="container-fluid bg-info py-4 text-light text-center">
+      <div class="container">
+        <h1>Lupa</h1>
+      </div>
+    </header>
+    <main class="container-fluid">
+      <section class="container py-4">
+        <form class="" action="index.html" method="post">
+          <div class="form-group">
+            <label for="ruta_imagen">Introduce la ruta de la imagen</label>
+            <input type="text" id="ruta_imagen" class="form-control" value="https://astelus.com/wp-content/viajes/Lago-Moraine-Parque-Nacional-Banff-Alberta-Canada.jpg">
+          </div>
+          <div class="form-group">
+            <button id="btn_cargar" type="button" class="btn btn-info">Cargar</button>
+            <button id="btn_cargar_bn" type="button" class="btn btn-info">Cargar en B&N</button>
+          </div>
+        </form>
+      </section>
+      <section id="container" class="container py-4">
+        <button id="btn_mostrar" type="button" class="btn btn-info">Mostrar / Ocultar</button>
+        <img id="imagen" src="" alt="" class="w-100">
+      </section>
+    </main>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Mi Javascript -->
+    <script src="js/lupa-jquery.js" charset="utf-8"></script>
+  </body>
+</html>

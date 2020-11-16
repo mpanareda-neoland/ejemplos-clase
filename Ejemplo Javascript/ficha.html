@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ficha de un Alumno</title>
+    <link rel="stylesheet" href="scss/main.min.css">
+  </head>
+  <body>
+    <header class="container-fluid bg-info">
+      <div class="container py-2 text-light text-center">
+        <h1>Ficha de un Alumno</h1>
+      </div>
+    </header>
+    <main>
+      <section class="container-fluid">
+        <div class="container py-2">
+          <div class="row">
+            <div id="img-container" class="col-2">
+              <!-- <img src="img/avatar1.jpg" alt="Avatar" class="img-fluid"> -->
+            </div>
+            <div class="col-10">
+              <h4>Alumno</h4>
+              <p id="alumno"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container-fluid">
+        <form class="form-inline" action="index.html" method="post">
+          <div class="container py-2">
+            <button type="button" class="btn btn-info" onclick="corregir()">Corregir</button>
+          </div>
+          <div class="container py-2 a-mostrar d-none">
+            <button type="button" class="btn btn-info" onclick="exportar()">Exportar</button>
+            <span id="exportar_json"></span>
+          </div>
+          <div class="container py-2 a-mostrar d-none">
+            <input type="text" id="importar_json" class="form-control" value="" placeholder="Introduce tu JSON">
+            <button type="button" class="btn btn-info" onclick="importar()">Importar</button>
+          </div>
+          <div class="container py-2">
+            <button type="button" class="btn btn-info" onclick="mostrar_img1()">Mostrar Imagen 1</button>
+            <button type="button" class="btn btn-info" onclick="mostrar_img2()">Mostrar Imagen 2</button>
+            <button type="button" class="btn btn-info" onclick="quitar_img()">Quitar Imagen</button>
+          </div>
+          <div class="container py-2">
+            <h5>Alumnos Relacionados</h5>
+            <div id="alumnos_relacionados" class="">
+              <!-- <div>
+                <span class="font-weight-bold" data-toggle="true">Nombre</span> <span>Apellido</span>
+              </div>
+              <div>
+                <span class="font-weight-bold">Nombre</span> <span>Apellido</span>
+              </div> -->
+            </div>
+          </div>
+          <div class="container py-2">
+            <button type="button" class="btn btn-info" onclick="ensenar()">Mostrar</button>
+            <button type="button" class="btn btn-info" onclick="ocultar()">Ocultar</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="json/alumnos.js" charset="utf-8"></script>
+    <script src="js/ficha.js" charset="utf-8"></script>
+  </body>
+</html>

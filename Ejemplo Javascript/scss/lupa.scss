@@ -1,0 +1,14 @@
+@import "../bootstrap/scss/bootstrap";
+
+.bn {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+#lupa {
+  width: 150px;
+  height: 150px;
+  border: 5px solid gray;
+  border-radius: 50%;
+  position: absolute;
+}
