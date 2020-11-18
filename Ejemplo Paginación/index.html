@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejemplo Paginación</title>
+    <link rel="stylesheet" href="scss/main.min.css">
+  </head>
+  <body>
+    <header class="container-fluid bg-info text-light py-4 text-center">
+      <h1>Ejemplo Paginación</h1>
+    </header>
+
+    <main class="container-fluid">
+
+      <section class="container py-4">
+        <h3>Creación de una sección con paginación</h3>
+        <p>Combinaremos dos componentes de Bootstrap:</p>
+        <ul>
+          <li><a href="https://www.w3schools.com/bootstrap4/bootstrap_pagination.asp">Paginación</a> para la estética </li>
+          <li><a href="https://www.w3schools.com/bootstrap4/bootstrap_navs.asp">Nav Toggleable</a> para el comportamiento </li>
+        </ul>
+      </section>
+
+      <section class="container py-4">
+        <h3>Ejemplo básico</h3>
+        <p>
+          Usamos los dos componentes. Se puede observar que el ul tendrá las clases de ambos.
+          No usaremos la clase <code>.nav-pills</code> o <code>.nav-tabs</code> en el <code>ul</code> para que no nos modifique a nive estético el componente.
+        </p>
+        <p>
+          Como el componente nav utiliza la clase <code>.active</code> en los <code>a</code> y el componente pagination lo espera en el <code>li</code>, podemos incluir un pequeño js que lo corrija.
+        </p>
+        <div id="basic" class="p-4 bg-light">
+          <!-- Tab panes -->
+          <div class="tab-content py-2">
+            <div class="tab-pane active container" id="page1">
+              Página 1
+            </div>
+            <div class="tab-pane container" id="page2">
+              Página 2
+            </div>
+            <div class="tab-pane container" id="page3">
+              Página 3
+            </div>
+          </div>
+          <!-- Pagination -->
+          <ul class="nav pagination">
+            <!-- <li class="nav-item page-item"><a class="nav-link page-link" data-toggle="tab" href="#page1">First</a></li> -->
+            <li class="nav-item page-item active"><a class="nav-link page-link active" data-toggle="tab" href="#page1">1</a></li>
+            <li class="nav-item page-item"><a class="nav-link page-link" data-toggle="tab" href="#page2">2</a></li>
+            <li class="nav-item page-item"><a class="nav-link page-link" data-toggle="tab" href="#page3">3</a></li>
+            <!-- <li class="nav-item page-item"><a class="nav-link page-link" data-toggle="tab" href="#page3">Last</a></li> -->
+          </ul>
+        </div>
+
+      </section>
+
+      <section class="container py-4">
+        <h3>Ejemplo dinámico</h3>
+        <p>
+          Si no sabemos de antemano cuántas páginas tendremos, en html pondremos sólamente los contenedores y desde jQuery generaremos el resto
+        </p>
+        <p>
+          Definiremos una función que reciba el número de la página y su contenido y la añada.
+        </p>
+        <p>
+          Al arrancar, iteramos el número de elementos que desemos crear y usamos la función para crearlas.
+          Al finalizar, clickamos al primer elemento para que se cargue.
+        </p>
+        <div id="dynamic" class="p-4 bg-light">
+          <!-- Tab panes -->
+          <div class="tab-content py-2"></div>
+          <!-- Pagination -->
+          <ul class="nav pagination"></ul>
+        </div>
+
+      </section>
+
+      <section class="container py-4">
+        <h3>Ejemplo avanzado</h3>
+        <p>
+          Si lo que queremos es poner una conjunto de elementos en páginas, tendremos que calcular el total de páginas dependiendo del número de elementos por página que queramos
+        </p>
+        <p>
+          Definiremos, como en el caso aterior, una función que reciba el número de la página y su contenido, ahora en formato json, y la añada.
+        </p>
+        <p>
+          Al arrancar, leemos los elementos que queremos cargar, los agrupamos, e iteramos el número de páginas que desemos crear usando la función para crearlas.
+          Al finalizar, clickamos al primer elemento para que se cargue.
+        </p>
+        <div id="advanced" class="p-4 bg-light">
+          <!-- Tab panes -->
+          <div class="tab-content py-2"></div>
+          <!-- Pagination -->
+          <ul class="nav pagination justify-content-center"></ul>
+        </div>
+
+      </section>
+
+    </main>
+
+      <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+      <!-- Popper JS -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+      <!-- Latest compiled JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+      <!-- Mi Javascript -->
+      <script src="js/main.js" charset="utf-8"></script>
+  </body>
+</html>
