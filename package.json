@@ -1,0 +1,25 @@
+{
+  "name": "ejemplos-clase",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@types/jquery": "^3.5.4",
+    "@types/node": "^14.14.8",
+    "bootstrap": "^4.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpanareda-neoland/ejemplos-clase.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mpanareda-neoland/ejemplos-clase/issues"
+  },
+  "homepage": "https://github.com/mpanareda-neoland/ejemplos-clase#readme"
+}
