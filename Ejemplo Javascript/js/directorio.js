@@ -264,7 +264,7 @@ contrata("Pepito", "Juanita", "Pablito", "asd", "dlskfha");
     return error;
   };
 }*/
-function notifica(persona) {
+async function notifica(persona) {
 
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -282,15 +282,60 @@ function notifica(persona) {
   });
 }
 
+async function notificaciones() {
+  try {
+
+    const response = await notifica(persona);
+    console.log("VERIFICADO", response);
+
+  } catch(error) {
+    console.log("ERROR", error);
+  }
+}
+
+async function notificaciones_paralelas() {
+  try {
+
+    // const resultados = await Promise.all([
+    //   notifica(persona),
+    //   notifica(comercial)
+    // ]);
+    // console.log(resultados);
+
+    const notif1 = notifica(persona);
+    const notif2 = notifica(comercial);
+    console.log(await notif1, await notif2);
+
+  } catch (e) {
+      console.log(e);
+  }
+}
+
 console.log("ANTES");
 
-const resultado = notifica(persona);
-resultado
-  .then((response) => {
-    console.log("VERIFICADO", response);
-  })
-  .catch((error) => {
-    console.log("ERROR", error)
-  });
+//notificaciones();
+notificaciones_paralelas();
+
+// const resultado = notifica(persona);
+// resultado
+//   .then((response) => {
+//     console.log("VERIFICADO", response);
+//   })
+//   .catch((error) => {
+//     console.log("ERROR", error)
+//   });
+//
+// const resultado_notifica1 = notifica(persona);
+// const resultado_notifica2 = notifica(comercial);
+//
+// const resultado = Promise.all([resultado_notifica1, resultado_notifica2]);
+// resultado
+//   .then((responses) => {
+//     console.log(responses);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
 
 console.log("DESPUES");

@@ -288,7 +288,7 @@ function verifica_direccion(resolve, reject) {
   setTimeout(() => {
     var rand = Math.round(Math.random() * 100);
     if (rand > 30) {
-      resolve("La dirección es correcta");
+      resolve("La dirección está bien");
     } else {
       reject("Todo mal");
     }
@@ -314,6 +314,25 @@ function verifica_direccion(resolve, reject) {
    }, 2500);
  }
 
+ /**
+  * Función notifica_cliente
+  * @param resolve función ok
+  * @oaran rehect función error
+  * 85% veces resuelva "Cliente notificado"
+  * 15% veces rechace "Error al notificar al cliente"
+  */
+function notifica_cliente(resolve, reject) {
+  console.log("Vamos a notificar al cliente");
+  setTimeout(() => {
+    var rand = Math.round(Math.random() * 100);
+    if (rand > 15) {
+      resolve("Cliente Notificado");
+    } else {
+      reject("Error al notificar al cliente");
+    }
+  }, 1500);
+}
+
 /**
  * Función verifica compra
  * Sin parámetros
@@ -331,6 +350,15 @@ function verifica_compra() {
  function pedido() {
    return new Promise(realiza_pedido)
  }
+
+ /**
+  * Función notificar
+  * Sin parámetros
+  * @return Promise
+  */
+  function notificar() {
+    return new Promise(notifica_cliente);
+  }
 
 /**
  * Funcion verificado
@@ -351,6 +379,37 @@ function error(error) {
   console.log("ERROR: ", error);
 }
 
+async function pedido_async() {
+  // capturar la dirección
+  direccion = $("#direccion").val();
+
+  try {
+
+    // verificar
+    const resultado = await verifica_compra();
+    console.log("VERIFICADO: ", resultado);
+    // pedido
+    const response = await pedido();
+    console.log("PEDIDO: ", response);
+
+  } catch (e) {
+    console.log("ERROR: ", e);
+  }
+
+}
+
+async function pedido_digital_async() {
+  try {
+    const respuestas = await Promise.all([
+      pedido(),
+      notificar()
+    ]);
+    console.log(respuestas);
+  } catch (e) {
+      console.log(e);
+  }
+}
+
 // const verificacion = verifica_compra();
 $(document).ready(function() {
 
@@ -366,6 +425,27 @@ $(document).ready(function() {
         console.log("PEDIDO: ", response);
       })
       .catch(error);
+  });
+
+  $("#pedido_async").on("click", () => {
+    pedido_async();
+  });
+
+  $("#pedido_digital").on("click", () => {
+    Promise.all([
+      pedido(),
+      notificar()
+    ])
+    .then((respuestas) => {
+      console.log(respuestas);
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  });
+
+  $("#pedido_digital_async").on("click", () => {
+    pedido_digital_async()
   });
 
 })
